@@ -197,6 +197,15 @@
                               <a href="{{ url('home') }}">@lang('Inicio')</a>
                         </li>
                        
+                        @php
+                              $permisos=\Session::get('permisos')[0];
+                          @endphp
+                          @foreach ($permisos as $permiso)
+                          <li>
+                              <a href="{{$permiso['ruta']}}">{{$permiso['permiso']}}</a>
+                          </li>
+                          @endforeach
+                          {{--
                         
                         <li>
                             <a href="/censo-poblacional">@lang('Censo Poblacional')</a>
@@ -218,7 +227,7 @@
                         <li>
                             <a href="{{ url('Menu-administrador') }}">@lang('Administración')</a>
                         </li>
-                        
+                        --}}
 
                         <!--
                          <li class="dropdown">
